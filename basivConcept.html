@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Document</title>
+    <body>
+        <script>
+            //simple initialisation of variable
+            a=5;
+            document.write("<br>");
+            document.write(a);
+            a=5,36;
+            document.write("<br>");
+            document.write(a);
+            a="Ritiksha Chauhan";
+            document.write("<br>");
+            document.write(a);
+            document.write("<br>value of a is\""+ a +"\"");
+             
+            //Variable Reassignment
+            a = 5;
+            document.write(a);
+            a=10;
+            document.write(a);
+            document.write("Hello");
+            //let a = 5;
+            document.write(a);
+            a = 9;
+            document.write("<br>"+a);
+            
+            //let Keyword
+            //let a=5;
+            document.write("before the braces"+a);
+            {
+            let a=9;
+            document.write("<br>inside the braces"+a);
+            }
+            document.write("<br>outside the braces"+a);
+
+            //Block Scope with let
+            var a=5;
+            document.write("before the braces"+a);
+            {
+            var a=9;
+            document.write("<br>inside the braces"+a);
+            }
+            document.write("<br>outside the braces"+a);
+
+            //Alert Box
+            alert("hello");
+
+            //Prompt Box
+            alert("Hey! Enter the values please");
+            a=prompt("enter the value a"); 
+            b=prompt("enter the value b");
+            c=a+b;
+            document.write(c);
+
+            //typeof Operator
+            document.write(typeof(a));
+
+            //Type Conversion
+            a1=parseInt(a); // conversion
+            b1=parseInt(b);
+            c=a1+b1;
+            document.write(c);
+            //Confirm Box
+            d=confirm("output is correct");//this gives answer in answer in true or false
+            alert(d);
+            document.write(d);
+
+            //Array Creation
+            let a = [1,2,3,4,5,6,7,8,9,0];
+            document.write("array is:"+a);
+            document.write("<br>");
+            document.write(a[5]);  //Array Indexing
+            document.write("<br>");
+            document.write("value in the array <br>");
+
+            // Loop Through Array
+            for(let index = 0; index<a.length; index++){
+            let element =a[index];
+            document.write(element);
+            }
+            document.write("<br>");
+            //Object Creation
+            let x = {name:"kamal", email:"kamal@gmail.com", id:4};
+            document.write(x); //why the output for this is object Object
+            document.write("<br>");
+            //Accessing Object Properties
+            document.write(x.id);
+            document.write("<br>");
+            document.write(x.email);
+            document.write("<br>");
+            document.write(x.name);
+
+            //Console Output
+            console.log(a);
+            console.log(x);
+
+            //Function Declaration
+            function helloname() {
+            document.write("hello");
+            }
+
+            //Function with Parameters
+            helloname();
+            function helloname (name) {
+            document.write("hello" + name);
+            }
+            n="kamal"
+            helloname(n);
+
+            //Multiple Parameters
+            function helloname (name,email) {
+            document.write("hello" + name);
+            document.write("<br>");
+            document.write("hello" + email);
+            document.write("<br>");
+            }
+            n="kavi";
+            helloname(n,"kavi@gmail.com");
+            document.write("<br>");
+            n="kamal";
+            helloname(n);
+            document.write("<br>");
+
+        </script>
+    </body>
+</html>
+
+//Button Click Event
+<!DOCTYPE html>
+<html lang="en">
+    <title>Document</title>
+    <body>
+        <button onclick="clickme()">click me</button>  
+        <script>
+            //Event Handling Function
+            function clickme(){
+            alert("clickme");
+            }
+            clickme(); // Direct Function Call
+        </script>
+    </body>
+</html>
