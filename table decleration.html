@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Declaration Form</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Result Declaration Form</h2>
+        <table border="1" cellpadding="8">
+            <tr>
+                <td>Student Name</td>
+                <td><input type="text" id="sname"></td>
+            </tr>
+            <tr>
+                <td>Student Id</td>
+                <td><input type="text" id="sid"></td>
+            </tr>
+            <tr>
+                <th>Subject Name</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td>Maths</td>
+                <td><input type="number" id="m1"></td>
+            </tr>
+            <tr>
+                <td>Science</td>
+                <td><input type="number" id="m2"></td>
+            </tr>
+            <tr>
+                <td>Hindi</td>
+                <td><input type="number" id="m3"></td>
+            </tr>
+            <tr>
+                <td>Arts</td>
+                <td><input type="number" id="m4"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button onclick="CalculateResult()">
+                        Genenrate result
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        
+        <table border="1" cellpadding="24">
+            <tr>
+                <th colspan="2">Result Summary</th>
+            </tr>
+
+            <tr>
+                <td>Student Name</td>
+                <td id="rname"></td>
+            </tr>
+
+            <tr>
+                <td>Student Id</td>
+                <td id="rid"></td>
+            </tr>
+
+            <tr>
+                <td>Total Marks</td>
+                <td id="total"></td>
+            </tr>
+
+            <tr>
+                <td>Percentage</td>
+                <td id="percentage"></td>
+            </tr>
+
+            <tr>
+                <td>Division</td>
+                <td id="division"></td>
+            </tr>
+
+            <tr>
+                <td>Result</td>
+                <td id="result"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function CalculateResult(){
+            let name = document.getElementById("sname").value;
+            let id = document.getElementById("sid").value;
+
+            let m1 = Number(document.getElementById("m1").value);
+            let m2 = Number(document.getElementById("m2").value);
+            let m3 = Number(document.getElementById("m3").value);
+            let m4 = Number(document.getElementById("m4").value);
+
+            let total = m1+m2+m3+m4;
+            let percentage = total/4;
+        
+            let division = "";
+            let result = "";
+
+        if (m1<33 || m2<33 ||m3<33 || m4<33)
+        {
+            result = "Fail";
+            division ="-";
+        }
+        else{
+            result = "pass";
+
+            if (percentage >= 60){
+            division = " First Division"
+            }
+            else if (percentage >=45){
+            division ="Second Division"
+            }
+            else{
+            division = " third division"
+            }
+        }
+        document.getElementById("rname").innerHTML = name;
+        document.getElementById("rid").innerHTML = id;
+        document.getElementById("total").innerHTML = total + "/400";
+        document.getElementById("percentage").innerHTML = percentage.toFixed(2) + "%";
+        document.getElementById("division").innerHTML = division;
+        document.getElementById("result").innerHTML = result;
+    } 
+    </script>
+</body>
+</html>
