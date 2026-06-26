@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <style>
+        form {
+            width: 30%;
+            margin: auto;
+            margin-top: 200px;
+            font-size: 24px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .btn {
+            width: 100%;
+            font-size: 24px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #msg {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        input {
+            font-size: 18px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return validate()">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td>
+                    <input type="text" name="nm" id="n1">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="pass" id="n2">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div id="msg"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Login" class="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validate() {
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+
+            let m = "";
+
+            if (n1 === "") {
+                m = "Enter the username";
+                document.getElementById("msg").innerHTML = m;
+            }
+            else if (n2 === "") {
+                m = "Enter the password";
+                document.getElementById("msg").innerHTML = m;
+            }
+            else {
+                alert("Success");
+                m = "Login Successful";
+                document.getElementById("msg").innerHTML = m;
+                document.getElementById("msg").style.color = "green";
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
